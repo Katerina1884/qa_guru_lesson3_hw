@@ -11,6 +11,7 @@ public class AutomationFormTest {
     void fillFormTest() {
         Configuration.browserSize = "1920x1080";
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue("Yulian");
@@ -36,7 +37,18 @@ public class AutomationFormTest {
 
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Yulian"), text("Sarychev"), text("7999123444"));
+        $(".table-responsive").shouldHave(text("Yulian Sarychev"),
+                text("mail@example.com"),
+                text("Male"),
+                text("7999123444"),
+                text("08 July,1989"),
+                text("Hindi, Biology"),
+                text("Sports, Reading"),
+                text("111.jpg"),
+                text("Istra, Ivanova street, 98"),
+                text("Rajasthan Jaipur")
+
+        );
 
     }
 }
