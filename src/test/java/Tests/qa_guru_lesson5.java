@@ -1,3 +1,5 @@
+package Tests;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class AutomationFormTest {
+public class qa_guru_lesson5 {
     @Test
     void fillFormTest() {
         Configuration.browserSize = "1920x1080";
