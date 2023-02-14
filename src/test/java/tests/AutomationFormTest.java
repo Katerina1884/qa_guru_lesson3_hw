@@ -1,14 +1,13 @@
-package Tests;
+package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
 
 
 public class AutomationFormTest extends TestBase {
 
     @Test
     void fillFormTest() {
-        new RegistrationPage().openPage()
+        registrationPage.openPage()
                 .setFirstName("Yulian")
                 .setLastName("Sarychev")
                 .setEmail("mail@example.com")
@@ -23,13 +22,6 @@ public class AutomationFormTest extends TestBase {
                 .setAddress("Istra, Ivanova street, 98")
                 .setStateAndSity("Rajasthan", "Jaipur")
                 .setSubmit();
-
-
-
-        $("#state").click();
-        $("#react-select-3-option-3").click();
-        $("#city").click();
-        $("#react-select-4-option-0").click();
 
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", "Yulian Sarychev")
