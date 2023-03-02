@@ -9,7 +9,7 @@ public class TestData {
             email = faker.internet().emailAddress(),
             gender = "Male",
             phone = "7999123444",
-            birthDay = String.valueOf(faker.number().numberBetween(1, 31)),
+            birthDay = String.format("%02d", faker.number().numberBetween(1,28)),
             birthMonth = "July",
             birthYear = String.valueOf(faker.number().numberBetween(1980, 2023)),
             subjects1 = "Hindi",
